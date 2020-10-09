@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="default.css" type="text/css">
     <link id="theme-style" rel="stylesheet" href="" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
 </head>
 <body>
@@ -99,8 +100,8 @@
                             <li>PYTHON</li>
                             <li>DJANGO</li>
                             <li>REACT</li>
-                            <li>REACT-NATIVE</li>
-                            <li>mongoDB</li>
+                            <li>OOPS-CONCEPTS</li>
+                            <li>GIT</li>
                         </ul>
 
                     </div>
@@ -169,7 +170,7 @@
         <div class="main-container">
             <h3 style="text-align: center;">Get In Touch</h3>
 
-            <form id="contact-form">
+            <form id="contact-form" action="">
                 <label>Name</label>
                 <input class="input-field" type="text" name="name">
 
@@ -188,6 +189,25 @@
 
         </div>
     </section>
+    <script>
+        $("#contact-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbzhU7PWaBxL4hZKK6PMdYDDvaQ8cs2xzXGKu4U5hg/exec",
+                data:$("#contact-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
     <script type="text/javascript" src="script.js"></script>
 
 </body>
